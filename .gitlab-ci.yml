@@ -8,8 +8,11 @@ e2e-tests:
   stage: e2e
 
   before_script:
+    - export PATH="$HOME/.nvm/versions/node/v18.20.8/bin:$PATH"
+    - node -v
+    - yarn -v
     - yarn install
-    - npx playwright install --with-deps
+    - npx playwright install
 
   script:
     - yarn run e2e
