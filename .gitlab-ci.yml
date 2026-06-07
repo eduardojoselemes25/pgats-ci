@@ -1,4 +1,4 @@
-image: node:20
+image: node:24
 
 stages:
   - e2e
@@ -7,7 +7,7 @@ e2e-tests:
   stage: e2e
 
   before_script:
-    - corepack enable
+    - npm install -g yarn
     - yarn install
     - npx playwright install --with-deps
 
