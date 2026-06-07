@@ -15,6 +15,13 @@ e2e-tests:
 
   artifacts:
     when: always
+
+    reports:
+      junit:
+        - test-results/results.xml
+
     paths:
       - playwright-report/
       - test-results/
+
+    expire_in: 1 week
