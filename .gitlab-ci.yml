@@ -1,9 +1,10 @@
-image: node:24
-
 stages:
   - e2e
 
 e2e-tests:
+  tags:
+    - mac
+
   stage: e2e
 
   before_script:
