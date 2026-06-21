@@ -22,7 +22,7 @@ export default defineConfig({
   /* Test reports */
   reporter: [
     ['html', { open: 'never' }],
-    ['junit', { outputFile: 'test-results/results.xml' }]
+    ['junit', { outputFile: 'test-results/results.xml' }],
   ],
 
   /* Shared settings for all projects */
@@ -31,7 +31,7 @@ export default defineConfig({
 
     trace: 'on-first-retry',
 
-    screenshot: 'only-on-failure'
+    screenshot: 'only-on-failure',
   },
 
   /* Configure projects for major browsers */

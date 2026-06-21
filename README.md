@@ -14,10 +14,10 @@ Com essa abordagem é possível identificar problemas rapidamente, aumentar a qu
 
 ## Tecnologias Utilizadas
 
-* Node.js
-* Yarn
-* Playwright
-* GitHub Actions
+- Node.js
+- Yarn
+- Playwright
+- GitHub Actions
 
 ## Estrutura da Pipeline
 
@@ -65,10 +65,10 @@ Após a execução dos testes, o Playwright gera relatórios contendo os resulta
 
 Esses relatórios permitem identificar:
 
-* Testes aprovados.
-* Testes reprovados.
-* Evidências de execução.
-* Detalhes de falhas encontradas.
+- Testes aprovados.
+- Testes reprovados.
+- Evidências de execução.
+- Detalhes de falhas encontradas.
 
 ## Publicação dos Relatórios
 
@@ -76,19 +76,19 @@ Os relatórios são armazenados e publicados como Artifacts do GitHub Actions, p
 
 ## Benefícios da Solução
 
-* Automação da validação do código.
-* Execução automática dos testes.
-* Histórico das execuções.
-* Disponibilização dos relatórios para análise.
-* Maior confiabilidade nas entregas.
+- Automação da validação do código.
+- Execução automática dos testes.
+- Histórico das execuções.
+- Disponibilização dos relatórios para análise.
+- Maior confiabilidade nas entregas.
 
 ## Evidências
 
 Para validação do trabalho, deve ser apresentada pelo menos uma execução bem-sucedida da pipeline contendo:
 
-* Status de sucesso da execução.
-* Relatório armazenado como Artifact.
-* Histórico da execução no GitHub Actions.
+- Status de sucesso da execução.
+- Relatório armazenado como Artifact.
+- Histórico da execução no GitHub Actions.
 
 ## Repositório
 

@@ -1,5 +1,5 @@
 # CI de Nível 04 - Pipeline Integrada
-name: "Execução Integrada"
+name: 'Execução Integrada'
 
 on:
   push:
@@ -12,7 +12,6 @@ on:
     - cron: '0 8 * * *'
 
 jobs:
-
   inspecao:
     runs-on: ubuntu-latest
 

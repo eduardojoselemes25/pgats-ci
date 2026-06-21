@@ -1,11 +1,11 @@
 # CI de Nível 03 - Execução após outra Pipeline
 
-name: "Execução por Deploy"
+name: 'Execução por Deploy'
 
 on:
   workflow_run:
     workflows:
-      - "Execução Manual"
+      - 'Execução Manual'
     types:
       - completed
 
