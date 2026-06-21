@@ -1,4 +1,5 @@
-name: Execução Integrada
+# CI de Nível 05 - Pipeline para Push no Código
+name: Execução Push
 
 on:
   push:
