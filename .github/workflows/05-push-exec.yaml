@@ -1,9 +1,14 @@
-name: CI de Nível 05 - Execução por Push
+name: Execução Integrada
 
 on:
   push:
     branches:
       - master
+
+  workflow_dispatch:
+
+  schedule:
+    - cron: '0 8 * * *'
 
 jobs:
   e2e-tests:
