@@ -9,6 +9,7 @@ on:
 
   schedule:
     - cron: '0 8 * * *'
+
 jobs:
 
   inspecao:
@@ -50,10 +51,11 @@ jobs:
         run: yarn
 
       - name: Executando testes unitários
-        run: yarn test --ci --reporters=default --reporters=jest-junit
+        run: yarn test
 
       - name: Upload Relatório
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: relatorio-testes
-          path: junit.xml
+          path: results.xml
