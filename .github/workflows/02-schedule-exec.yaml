@@ -1,52 +1,40 @@
-# CI de Nível 02 - Execução Agendada 
+# CI de Nível 02 - Execução Agendada
 
-# nome da pipeline
 name: "Schedule Execution"
 
-# gatilhos / triggers - regras de disparo
-# gatilho manual = workflow_dispatch
-# gatilho agendado = schedule
-
 on:
-    schedule:
-        # cronograma de execução
-        # 1 - minuto, 2 - hora, 3 - dia do mês, 4 - mês, 5 - dia da semana
-        - cron: '*/30 * * * *' # Runs every 6 minutes
-
-        # Roda toda sexta-feira a meia noite
-        #- cron: '0 0 * * 5' # Runs at 00:00, only on Friday
-
-
-#tarefas dentro da pipeline = jobs
+  schedule:
+    # Executa a cada 30 minutos
+    - cron: '*/30 * * * *'
 
 jobs:
-    #nome do job
-    e2e-tests:
-        # maquina onde o job vai rodar
-        runs-on: ubuntu-latest
+  e2e-tests:
+    runs-on: ubuntu-latest
 
-        # passos do job
-        steps:
-            # clone do projeto
-            - uses: actions/checkout@v4
+    steps:
+      - uses: actions/checkout@v4
 
-            # instalção do node
-            - uses: actions/setup-node@v4
-              with:
-                  node-version: 24.x
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24.x
 
-            # instalação do Yarn
-            - name: Instalando Yarn
-              run: npm install -g yarn
-            
-            #   instalação das dependências
-            - name: Instalando dependências
-              run: yarn
-            
-            # instalação dos Browsers do Playwright
-            - name: Instalando Browsers do Playwright
-              run: yarn playwright install
-            
-            # executar os testes e2e
-            - name: Executando testes e2e
-              run: yarn run e2e
+      - name: Instalando Yarn
+        run: npm install -g yarn
+
+      - name: Instalando dependências
+        run: yarn
+
+      - name: Instalando Browsers do Playwright
+        run: npx playwright install --with-deps
+
+      - name: Executando testes e2e
+        run: yarn run e2e
+
+      - name: Publicar relatório
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report-schedule
+          path: |
+            playwright-report
+            test-results

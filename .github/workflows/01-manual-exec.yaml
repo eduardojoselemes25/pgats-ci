@@ -37,8 +37,17 @@ jobs:
             
             # instalação dos Browsers do Playwright
             - name: Instalando Browsers do Playwright
-              run: yarn playwright install
+              run: npx playwright install --with-deps
             
             # executar os testes e2e
             - name: Executando testes e2e
               run: yarn run e2e
+
+            - name: Publicar relatório 
+              if: always()
+              uses: actions/upload-artifact@v4
+              with:
+                name: playwright-report
+                path: |
+                  playwright-report
+                  test-results
